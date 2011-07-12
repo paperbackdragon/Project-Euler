@@ -33,7 +33,8 @@ int daysInMonth() {
 		return 31;
 }
 
-void updateDate(int numDays) {//TEST
+/*Variable 'numDays' must not be greater than 27*/
+void updateDate(int numDays) {
 	day += numDays;
 	if(day > daysInMonth()) {
 		day -= daysInMonth();
@@ -47,14 +48,16 @@ void updateDate(int numDays) {//TEST
 
 /*Global variable 'day' must be set to a Sunday*/
 int sundaysOnFirst(int endYear) {
-	//int sundays = 0;
-	//for every updateDate(7) while year < endYear
-		//if day is the 1st of month
-			//sundays++;
+	int sundays = 0;
+	for(; year <= endYear; updateDate(7)) {
+		if(day == 1)
+			sundays++;
+	}
+	return sundays;
 }
 
 int main() {
-	//setStartDate(6, 1, 1901);
-	//cout << sundaysOnFirst(2000) << endl;
+	setStartDate(6, 1, 1901);
+	cout << sundaysOnFirst(2000) << endl;
     return 0;
 }
