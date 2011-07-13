@@ -5,7 +5,7 @@
 using namespace std;
 
 bool strCmp(string x, string y) {
-	if(x.compare(y) == -1)
+	if(x.compare(y) < 0)
 		return true;
 	else
 		return false;
