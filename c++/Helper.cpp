@@ -4,7 +4,7 @@ using namespace std;
 
 int Helper::sumOfDivs(int num) {
 	int sum = 0;
-	int root = (int) sqrt(num);
+	int root = (int) sqrt((double)num);
 	for(int i = root; i >= 1; i--) {
 		if(num % i == 0) {
 			if(i > 1 && (i * i != num))
@@ -23,7 +23,7 @@ bool Helper::isPrime(int num) {
     if(num % 2 == 0)
         return false;
 
-    int root = (int) sqrt(num) + 1;
+    int root = (int) sqrt((double)num) + 1;
     for(int i = root; i >= 2; i--) {
         if (num % i == 0)
             return false;
