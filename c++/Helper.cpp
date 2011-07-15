@@ -17,13 +17,10 @@ int Helper::sumOfDivs(int num) {
 }
 
 bool Helper::isPrime(int num) {
-	if(num < 0)
-		num *= -1;
-
     if(num == 2)
         return true;
     
-    if(num % 2 == 0 || num == 1 || num == 0)
+    if(num % 2 == 0 || num < 1)
         return false;
 
     int root = (int) sqrt((double)num) + 1;
