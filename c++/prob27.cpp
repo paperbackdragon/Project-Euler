@@ -18,7 +18,7 @@ int main() {
 				end = false;
 				for(int n = 0; !end; n++) {
 					if(!Helper::isPrime(formula(a, b, n))) {
-						if(n-1 > most) {
+						if(n > most) {
 							most = n;
 							ansA = a;
 							ansB = b;
