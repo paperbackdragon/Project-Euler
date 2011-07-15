@@ -1,38 +1,40 @@
+//Code works in VS2008 if all headers and source files are included
+//Original code found at http://blog.mycila.com/2009/05/project-euler-problem-26.html
 #include <iostream>
-#include <vector>
-#include <cmath>
-#include <iomanip>
+#include "BigIntegerLibrary.hh"
 #include "Helper.h"
 using namespace std;
 
-/*Returns true if 1/prime has repeating cycle of prime-1 */
-bool hasCycle(int prime) {
-	double num = 1 / prime;
-	vector<int> cycle;
-	bool cycleFound
-	bool answer = false;
-	
-	num *= 10;
-	while(num != ceil(num))	{//check each digit
-		if(cycle.empty()) {
-			if((int)num != cycle.begin())
-				cycle.push_back((int)num);
-		}
-		else {
-			
-		}
-		num -= (int)num;
-		num *= 10;
-	}
+BigInteger pow(BigInteger base, BigInteger exp) {
+	for (BigInteger i = 0; i < exp; i++)
+		base *= exp;
+	return base;
 }
 
 int main() {
-	for(int i = 0; i < 1000; i++) {
-		if(Helper::isPrime(i)) {
-			if(hasCycle(prime)
-				cout << (pow(10,i) - 1) / i << endl; //digits in cycle
+	BigInteger ten = 10;
+	BigInteger cycle = 142857;
+	int res = 7;
+	int maxCycleLength = 6;
+	BigInteger remainder;
+
+	//for each prime, starting at the maximum possible value (999 and 008 are not primes)
+	for(int p = 997; p > 7; p -= 2) {
+		if(Helper::isPrime(p)) {
+			//if p is prime, we check the smallest number that satisfies 10^i % p = 1
+			for(int i = 1; i < p; i++) {
+				remainder = modexp(ten, i, p);
+				if(remainder == 1) {		 //we found the length i of the cycle of 1/p
+					if(maxCycleLength < i) { //we save these values if the current cycle is greater
+						maxCycleLength = i;
+						res = p;
+						cycle = pow(ten, i); //the cycle of 1/p
+					}
+					break;
+				}
+			}
 		}
 	}
-	
-	return 0;
+	cout << res << endl;
+	//system("pause");
 }
