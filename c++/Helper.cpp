@@ -3,7 +3,7 @@
 using namespace std;
 
 int* Helper::reduce(int* frac) {
-	for(int i = 99; i > 0; i--) {
+	for(int i = *(frac+1); i > 0; i--) {
 		if(*frac % i == 0 && *(frac+1) % i == 0) {
 			*frac /= i;
 			*(frac+1) /= i;

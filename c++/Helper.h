@@ -6,8 +6,7 @@ private:
 	Helper() {}
 public:
 	/*Reduces given fraction to smallest values
-	NOTE: Fractions must be < 1 and two digits on
-	top and bottom*/
+	NOTE: Fractions must be < 1 */
 	static int* reduce(int*);
 
 	/*Finds the sum of the divisors of an integer*/
