@@ -5,6 +5,9 @@ class Helper {
 private:
 	Helper() {}
 public:
+	/*Computes the factorial of an integer*/
+	static int factorial(int);
+	
 	/*Reduces given fraction to smallest values
 	NOTE: Fractions must be < 1 */
 	static int* reduce(int*);

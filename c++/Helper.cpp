@@ -2,6 +2,13 @@
 #include "Helper.h"
 using namespace std;
 
+int Helper::factorial(int num) {
+	if (num > 1)
+		return (num * factorial(num - 1));
+	else
+		return 1;
+}
+
 int* Helper::reduce(int* frac) {
 	for(int i = *(frac+1); i > 0; i--) {
 		if(*frac % i == 0 && *(frac+1) % i == 0) {
