@@ -2,6 +2,17 @@
 #include "Helper.h"
 using namespace std;
 
+int* Helper::reduce(int* frac) {
+	for(int i = 99; i > 0; i--) {
+		if(*frac % i == 0 && *(frac+1) % i == 0) {
+			*frac /= i;
+			*(frac+1) /= i;
+			return frac;
+		}
+	}
+	return 0;
+}
+
 int Helper::sumOfDivs(int num) {
 	int sum = 0;
 	int root = (int) sqrt((double)num);
