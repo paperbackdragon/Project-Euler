@@ -8,27 +8,30 @@ int main() {
     int prime = 0;
     int counter = 0;
     vector<int> digits;
+    vector<int>::iterator it;
     bool permPrime;
 
-	for(int i = 0; i < 1000000; i++) {
+	for(int i = 1; i < 1000000; i++) {
         if(Helper::isPrime(i)) {
+            digits.clear();
             //separate digits
             prime = i;
             for(; prime > 0; prime /= 10)
-                digits.push_back(prime % 10);
+                digits.insert(digits.begin(), prime % 10);
             //check if circular
             permPrime = true;
-            while(next_permutation(digits.front(), digits.back())) {
+            while(prime != i) {
+                it = digits.begin();
+                rotate(digits.begin(), ++it, digits.end());
                 //combine digits
                 prime = 0;
-                for(int j = 0; j < digits.size(); j++)
+                for(unsigned int j = 0; j < digits.size(); j++)
                     prime = (prime * 10) + digits[j];
                 if(!Helper::isPrime(prime))
                     permPrime = false;
             }
             if(permPrime)
                 counter++;
-
         }
     }
     cout << counter << endl;
