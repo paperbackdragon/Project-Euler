@@ -1,7 +1,7 @@
 Author: Heather (a.k.a. paperbd)
 
 Updates:
-- Work on Python projects has stopped, C++ is now where the main work is done.
+- Work on Python soultions has stopped. The C++ folder contains the majority of the work.
 
 Notes on the C++ solutions:
 - Solutions are split into groups of ten and put in folders.
