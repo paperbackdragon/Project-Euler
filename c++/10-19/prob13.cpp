@@ -1,6 +1,12 @@
-#include<iostream>
-#include<string>
-#include<sstream>
+#include <iostream>
+#include <string>
+/* URL: http://projecteuler.net/index.php?section=problems&id=13
+
+Work out the first ten digits of the sum of the following one-hundred 50-digit numbers.
+
+Answer: 5537376230 */
+
+#include <sstream>
 using namespace std;
 
 string a[100] = {"37107287533902102798797998220837590246510135740250",
