@@ -6,24 +6,10 @@ What is the largest prime factor of the number 600851475143 ?
 
 Answer: 6857 */
 
-#include<iostream>
-#include<cmath>
+#include <iostream>
+#include <cmath>
+#include "Helper.h"
 using namespace std;
-
-bool isprime(int num) {
-    if(num == 2)
-        return true;
-    
-    if(num % 2 == 0)
-        return false;
-
-    int root = sqrt(num) + 1;
-    for(int i = root; i >= 2; i--) {
-        if (num % i == 0)
-            return false;
-    }
-    return true;
-}
 
 int main() {
     int largest = 0;
@@ -33,11 +19,11 @@ int main() {
         if(num % i == 0) {
             int factor = num / i;
 
-            if(isprime(factor)) {
+            if(Helper::isPrime(factor)) {
                 if (factor > largest)
                     largest = factor;
             }
-            if(isprime(i)) {
+            if(Helper::isPrime(i)) {
                 if (i > largest)
                     largest = i;
             }
