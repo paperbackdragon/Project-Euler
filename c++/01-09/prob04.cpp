@@ -6,10 +6,10 @@ Find the largest palindrome made from the product of two 3-digit numbers.
 
 Answer: 906609 */
 
-#include<iostream>
-#include<sstream>
-#include<string>
-#include<stack>
+#include <iostream>
+#include <sstream>
+#include <string>
+#include <stack>
 using namespace std;
 
 string convertInt(int number) {
@@ -54,7 +54,6 @@ int main() {
     }
     
     cout << largest << endl;
-        
     return 0;
 }
 

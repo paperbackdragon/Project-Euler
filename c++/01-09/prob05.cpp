@@ -6,7 +6,7 @@ What is the smallest positive number that is evenly divisible by all of the numb
 
 Answer: 232792560 */
 
-#include<iostream>
+#include <iostream>
 using namespace std;
 
 int main() {

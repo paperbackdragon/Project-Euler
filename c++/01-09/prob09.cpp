@@ -10,8 +10,8 @@ Find the product abc.
 
 Answer: 31875000 */
 
-#include<iostream>
-#include<cmath>
+#include <iostream>
+#include <cmath>
 using namespace std;
 
 int main() {

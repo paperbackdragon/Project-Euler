@@ -12,8 +12,8 @@ Find the difference between the sum of the squares of the first one hundred natu
 
 Answer: 25164150 */
 
-#include<iostream>
-#include<cmath>
+#include <iostream>
+#include <cmath>
 using namespace std;
 
 int main() {

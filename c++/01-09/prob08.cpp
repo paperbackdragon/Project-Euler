@@ -4,9 +4,9 @@ Find the greatest product of five consecutive digits in the 1000-digit number.
 
 Answer: 40824 */
 
-#include<iostream>
-#include<string>
-#include<cstdlib>
+#include <iostream>
+#include <string>
+#include <cstdlib>
 using namespace std;
 
 int main() {
@@ -21,7 +21,6 @@ int main() {
     }
 
     cout << largest << endl;
-
     return 0;
 }
 
