@@ -78,9 +78,8 @@ int letters(int num) {
 
 int main() {
     long answer = 0;
-    for(int i = 1; i <= 1000; i++) {
+    for(int i = 1; i <= 1000; i++)
         answer += letters(i);
-    }
     cout << answer << endl;
     return 0;
 }

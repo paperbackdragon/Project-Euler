@@ -50,7 +50,7 @@ int daysInMonth() {
 		return 31;
 }
 
-/*Variable 'numDays' must not be greater than 27*/
+/* Variable 'numDays' must not be greater than 27 */
 void updateDate(int numDays) {
 	day += numDays;
 	if(day > daysInMonth()) {
@@ -63,7 +63,7 @@ void updateDate(int numDays) {
 	}
 }
 
-/*Global variable 'day' must be set to a Sunday*/
+/* Global variable 'day' must be set to a Sunday */
 int sundaysOnFirst(int endYear) {
 	int sundays = 0;
 	for(; year <= endYear; updateDate(7)) {

@@ -11,7 +11,6 @@ NOTE: As there are only 16384 routes, it is possible to solve this problem by tr
 Answer: 1074 */
 
 #include <iostream>
-
 using namespace std;
 
 int tri [15][15] = {
@@ -32,7 +31,7 @@ int tri [15][15] = {
     {4, 62, 98, 27, 23, 9, 70, 98, 73, 93, 38, 53, 60, 4, 23}
 };
 
-//finds largest of 3 and adds to upper num
+/* Finds largest of 3 and adds to upper num */
 int maxsum (int num1, int num2, int up) {
     int biggest = num1;
     if(num2 > biggest)
@@ -40,12 +39,11 @@ int maxsum (int num1, int num2, int up) {
     return biggest + up;
 }
 
-//finds largest path
+/* Finds largest path */
 int path(int num, int tri[][15]) {
     for(int i = num-1; i >= 0; i--) {
-        for(int j = 0; j+1 < num && tri[i][j+1] != 0; j++) {
+        for(int j = 0; j+1 < num && tri[i][j+1] != 0; j++)
             tri[i-1][j] = maxsum(tri[i][j], tri[i][j+1], tri[i-1][j]);
-        }
     }
     return tri[0][0];
 }

@@ -31,7 +31,7 @@ long long calc [21][21] = {
     {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1}, 
     {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1}, 
     {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1} 
-    };
+};
 
 long long dist(int rows, int cols) {
     long long routes = 0;
@@ -47,19 +47,18 @@ long long dist(int rows, int cols) {
         if (calc[rows][cols] == -1) {   //not calculated
             left = calc[rows-1][cols];
             right = calc[rows][cols-1];
-            if(left == -1) {//not calculated
+            if(left == -1) {			//not calculated
                 left = dist(rows-1, cols);
                 calc[rows-1][cols] = left;
             }
-            if(right == -1) {//not calculated
+            if(right == -1) {			//not calculated
                 right = dist(rows, cols-1);
                 calc[rows][cols-1] = right;
             }
             routes = left + right;
             calc[rows][cols] = routes;
-        } else {                        //calculated
+        } else                        //calculated
             routes = calc[rows][cols];
-        }
     }
     return routes;
 }
