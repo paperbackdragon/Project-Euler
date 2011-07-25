@@ -1,9 +1,9 @@
 /* URL: http://projecteuler.net/index.php?section=problems&id=31
 In England the currency is made up of pounds and pence and there are eight coins in general circulation:
     1p, 2p, 5p, 10p, 20p, 50p, 1 pound (100p) and 2 pounds (200p).
-It is possible to make £2 in the following way:
-    1 x £1 + 1 x 50p + 2 x 20p + 1 x 5p + 1 x 2p + 3 x 1p
-How many different ways can £2 be made using any number of coins?
+It is possible to make 2 pounds in the following way:
+    1 x 1 pound + 1 x 50p + 2 x 20p + 1 x 5p + 1 x 2p + 3 x 1p
+How many different ways can 2 pounds be made using any number of coins?
 Answer: 73682 */
 
 #include <iostream>
