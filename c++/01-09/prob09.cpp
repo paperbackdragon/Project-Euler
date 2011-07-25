@@ -18,7 +18,6 @@ int main() {
     int a = 1;
     int b = 1;
     double c = 1;
-
     for(a = 1; a < 400; a++) {
         for(b = 1; b < a; b++) {
             c = sqrt(pow(a, 2) + pow(b, 2));
@@ -31,6 +30,5 @@ int main() {
             }
         }
     }
-
     return 0;
 }

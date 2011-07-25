@@ -22,7 +22,6 @@ bool ispalin(int num) {
     string str = convertInt(num);
     stack<char> numStack;
     unsigned int j;
-
     if(str.length() % 2 == 0) {
         for(int i = 0; i <= ((str.length() - 1) / 2); i++) 
             numStack.push(str.at(i));
@@ -32,7 +31,6 @@ bool ispalin(int num) {
             numStack.push(str.at(i));
         j = (str.length() / 2) + 1;
     }
-    
     for( ; j < str.length(); j++) {
         if(numStack.top() != str.at(j))
             return false;
@@ -43,7 +41,6 @@ bool ispalin(int num) {
 
 int main() {
     int largest = 0;
-
     for(int a = 999; a > 0; a--) {
         for(int b = 999; b > 0 && a*b > 999; b--) {
             if(ispalin(a * b)) {
@@ -52,7 +49,6 @@ int main() {
             }
         }
     }
-    
     cout << largest << endl;
     return 0;
 }

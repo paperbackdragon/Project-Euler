@@ -29,7 +29,6 @@ int main() {
             }
         }
     }
-
     cout << largest << endl;
     return 0;
 }
