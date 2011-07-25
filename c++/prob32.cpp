@@ -1,3 +1,15 @@
+/* URL: http://projecteuler.net/index.php?section=problems&id=32
+
+We shall say that an n-digit number is pandigital if it makes use of all the digits 1 to n exactly once; for example, the 5-digit number, 15234, is 1 through 5 pandigital.
+
+The product 7254 is unusual, as the identity, 39 × 186 = 7254, containing multiplicand, multiplier, and product is 1 through 9 pandigital.
+
+Find the sum of all products whose multiplicand/multiplier/product identity can be written as a 1 through 9 pandigital.
+
+HINT: Some products can be obtained in more than one way so be sure to only include it once in your sum.
+
+Answer: 45228 */
+
 #include <iostream>
 #include <cmath>
 #include <set>
@@ -14,7 +26,7 @@ int numDigits(int num) {
 	return digits;
 }
 
-/*Does not check for digits used more than once*/
+/* Does not check for digits used more than once */
 bool isPan(int a, int b, int c) {
 	int ary[] = {1, 2, 3, 4, 5, 6, 7, 8, 9};
 	int i = 0;
@@ -35,7 +47,6 @@ bool isPan(int a, int b, int c) {
 	//check if all are 0
 	for(i = 0; i < 9; i++)
 		sum += ary[i];
-	
 	if(sum == 0)
 		return true;
 	else
@@ -49,7 +60,6 @@ int main() {
 	set<int> products; 	//set to hold answers
 	set<int>::iterator it;
     int total = 0;		//sum of answers
-
 	//while there are 9 digits being considered
 	while(numDigits(a) + numDigits(b) + numDigits(c) <= 9) {
         c++;
@@ -59,18 +69,14 @@ int main() {
 				a = i;
 				b = c / i;
 			}
-		
 		    if(isPan(a, b, c))	    //if identity is 1-9 pandigital
 			    products.insert(c);	//add answer to set
         }
 	}
-			
 	//sum contents of set and print to cout
 	for (it = products.begin(); it != products.end(); it++)
 		total += *it;
-	
 	cout << total << endl;
-	
     return 0;
 }
 
