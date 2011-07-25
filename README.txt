@@ -1,4 +1,4 @@
-Author: paperbd
+Author: Heather (a.k.a. paperbd)
 
 Updates:
 - Work on Python projects has stopped, C++ is now where the main work is done.
