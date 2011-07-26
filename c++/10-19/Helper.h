@@ -8,8 +8,12 @@ public:
     /* Converts given integer to a string */
     static std::string convertInt(int);
 	
-	/* Returns the number of digits in given integer*/
+	/* Returns the number of digits in given integer */
 	static int numDigits(int);
+    
+    /* Concatenates integers in given array
+    NOTE: Second argument is size of array */
+    static int concat(int[], int);
 	
     /* Computes the factorial of an integer */
     static int factorial(int);

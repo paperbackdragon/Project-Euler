@@ -29,9 +29,8 @@ int main() {
                 b = c / i;
             }
             //concatenate
-            num = c;
-            num += (b * pow(10, Helper::numDigits(num)));
-            num += (a * pow(10, Helper::numDigits(num)));
+            int nums[] = {a, b, c};
+            num = Helper::concat(nums, 3);
             if(Helper::isPandigital(num))  //if identity is 1-9 pandigital
                 products.insert(c); //add answer to set
         }

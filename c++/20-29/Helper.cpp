@@ -22,6 +22,13 @@ int Helper::numDigits(int num) {
     return digits;
 }
 
+int Helper::concat(int ary[], int nums) {
+    int answer = ary[0];
+    for(int i = 1; i < nums; i++)
+        answer += (ary[i] * pow(10, numDigits(answer)));
+    return answer;
+}
+
 int Helper::factorial(int num) {
     if (num > 1)
         return (num * factorial(num - 1));
