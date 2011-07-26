@@ -3,20 +3,26 @@
 
 class Helper {
 private:
-	Helper() {}
+    Helper() {}
 public:
-	/*Computes the factorial of an integer*/
-	static int factorial(int);
+    /* Converts given integer to a string */
+    static std::string convertInt(int);
 	
-	/*Reduces given fraction to smallest values
-	NOTE: Fractions must be < 1 */
-	static int* reduce(int*);
+    /* Computes the factorial of an integer */
+    static int factorial(int);
 
-	/*Finds the sum of the divisors of an integer*/
-	static int sumOfDivs(int);
+    /* Reduces given fraction to smallest values
+    NOTE: Fractions must be < 1 */
+    static int* reduce(int*);
+
+    /* Finds the sum of the divisors of an integer */
+    static int sumOfDivs(int);
+
+    /* Returns true if given integer is prime */
+    static bool isPrime(int);
 	
-	/*Returns true if given integer is prime*/
-	static bool isPrime(int);
+	/* Returns true if given integer is a palindrome */
+	static bool isPalindrome(int);
 };
 
 #endif

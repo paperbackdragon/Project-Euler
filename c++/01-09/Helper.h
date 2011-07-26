@@ -5,6 +5,9 @@ class Helper {
 private:
     Helper() {}
 public:
+    /* Converts given integer to a string */
+    static std::string convertInt(int);
+	
     /* Computes the factorial of an integer */
     static int factorial(int);
 
@@ -17,6 +20,9 @@ public:
 
     /* Returns true if given integer is prime */
     static bool isPrime(int);
+	
+	/* Returns true if given integer is a palindrome */
+	static bool isPalindrome(int);
 };
 
 #endif

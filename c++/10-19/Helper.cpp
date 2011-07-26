@@ -1,6 +1,15 @@
 #include <cmath>
+#include <sstream>
+#include <string>
+#include <stack>
 #include "Helper.h"
 using namespace std;
+
+string Helper::convertInt(int number) {
+    stringstream ss;
+    ss << number;
+    return ss.str();
+}
 
 int Helper::factorial(int num) {
     if (num > 1)
@@ -43,6 +52,27 @@ bool Helper::isPrime(int num) {
     for(int i = root; i >= 2; i--) {
         if (num % i == 0)
             return false;
+    }
+    return true;
+}
+
+bool Helper::isPalindrome(int num) {
+    string str = convertInt(num);
+    stack<char> numStack;
+    unsigned int j;
+    if(str.length() % 2 == 0) {
+        for(unsigned int i = 0; i <= ((str.length() - 1) / 2); i++) 
+            numStack.push(str.at(i));
+        j = str.length() / 2;
+    } else {
+        for(unsigned int i = 0; i <= ((str.length() - 2) / 2); i++)
+            numStack.push(str.at(i));
+        j = (str.length() / 2) + 1;
+    }
+    for( ; j < str.length(); j++) {
+        if(numStack.top() != str.at(j))
+            return false;
+        numStack.pop();
     }
     return true;
 }
