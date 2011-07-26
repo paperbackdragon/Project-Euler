@@ -18,7 +18,7 @@ int* copyAddOne(int* ary, int size) {
     ary = new int[size + 1];
     for(int i = 0; i < size; i++)
         *(ary + i) = *(temp + i);
-    //Memory leak? delete[] doesn't work...
+    delete[] temp; //Memory leak? delete[] doesn't work...
     return ary;
 }
 
