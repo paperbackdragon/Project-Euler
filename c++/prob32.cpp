@@ -11,40 +11,14 @@ Answer: 45228 */
 #include "Helper.h"
 using namespace std;
 
-/* Does not check for digits used more than once */
-bool isPan(int a, int b, int c) {
-    int ary[] = {1, 2, 3, 4, 5, 6, 7, 8, 9};
-    int i = 0;
-    int sum = 0;
-    //find digits of all 3 numbers
-    for(i = 0; a > 0; i++) {
-        ary[(a % 10)- 1] = 0;
-        a /= 10;
-    }
-    for(i = 0; b > 0; i++) {
-        ary[(b % 10)- 1] = 0;
-        b /= 10;
-    }
-    for(i = 0; c > 0; i++) {
-        ary[(c % 10)- 1] = 0;
-        c /= 10;
-    }
-    //check if all are 0
-    for(i = 0; i < 9; i++)
-        sum += ary[i];
-    if(sum == 0)
-        return true;
-    else
-        return false;
-}
-
 int main() {
-    int a = 0;             //multiplicand
-    int b = 0;             //multiplier
-    int c = 0;             //product
-    set<int> products;     //set to hold answers
+    int a = 0;              //multiplicand
+    int b = 0;              //multiplier
+    int c = 0;              //product
+    int num = 0;            //pandigital
+    set<int> products;      //set to hold answers
     set<int>::iterator it;
-    int total = 0;        //sum of answers
+    int total = 0;          //sum of answers
     //while there are 9 digits being considered
     while(Helper::numDigits(a) + Helper::numDigits(b) + Helper::numDigits(c) <= 9) {
         c++;
@@ -54,8 +28,12 @@ int main() {
                 a = i;
                 b = c / i;
             }
-            if(isPan(a, b, c))        //if identity is 1-9 pandigital
-                products.insert(c);    //add answer to set
+            //concatenate
+            num = c;
+            num += (b * pow(10, Helper::numDigits(num)));
+            num += (a * pow(10, Helper::numDigits(num)));
+            if(Helper::isPandigital(num))  //if identity is 1-9 pandigital
+                products.insert(c); //add answer to set
         }
     }
     //sum contents of set and print to cout
