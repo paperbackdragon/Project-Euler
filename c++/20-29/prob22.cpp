@@ -10,13 +10,6 @@ Answer: 871198282 */
 #include <algorithm>
 using namespace std;
 
-bool strCmp(string x, string y) {
-    if(x.compare(y) < 0)
-        return true;
-    else
-        return false;
-}
-
 int getScore(string s) {
     int score = 0;
     for(unsigned int i = 0; i < s.length(); i++)
@@ -53,7 +46,7 @@ int main() {
     }
     namesFile.close();
     //alphabetize
-    sort(names.begin(), names.end(), strCmp);
+    sort(names.begin(), names.end());
     //count up name scores
     cout << getTotalScore(names) << endl;
     return 0;
