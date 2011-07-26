@@ -11,7 +11,7 @@ int main() {
     int largest = 0;
     for(int a = 999; a > 0; a--) {
         for(int b = 999; b > 0 && a*b > 999; b--) {
-            if(Helper::isPalindrome(a * b)) {
+            if(Helper::isPalindrome(Helper::convertInt(a * b))) {
                 if((a * b) > largest)
                     largest = a * b;
             }

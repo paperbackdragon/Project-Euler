@@ -8,18 +8,8 @@ Answer: 45228 */
 #include <iostream>
 #include <cmath>
 #include <set>
+#include "Helper.h"
 using namespace std;
-
-int numDigits(int num) {
-    int digits = 0;
-    if(num < 0)
-        num = -num;
-    while(num > 0) {
-        digits++;
-        num /= 10;
-    }
-    return digits;
-}
 
 /* Does not check for digits used more than once */
 bool isPan(int a, int b, int c) {
@@ -56,7 +46,7 @@ int main() {
     set<int>::iterator it;
     int total = 0;        //sum of answers
     //while there are 9 digits being considered
-    while(numDigits(a) + numDigits(b) + numDigits(c) <= 9) {
+    while(Helper::numDigits(a) + Helper::numDigits(b) + Helper::numDigits(c) <= 9) {
         c++;
         int root = (int) sqrt((double)c);
         for(int i = root; i >= 1; i--) {

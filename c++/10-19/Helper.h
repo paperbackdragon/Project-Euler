@@ -8,6 +8,9 @@ public:
     /* Converts given integer to a string */
     static std::string convertInt(int);
 	
+	/* Returns the number of digits in given integer*/
+	static int numDigits(int);
+	
     /* Computes the factorial of an integer */
     static int factorial(int);
 
@@ -21,8 +24,8 @@ public:
     /* Returns true if given integer is prime */
     static bool isPrime(int);
 	
-	/* Returns true if given integer is a palindrome */
-	static bool isPalindrome(int);
+	/* Returns true if given string is a palindrome */
+	static bool isPalindrome(std::string);
 };
 
 #endif

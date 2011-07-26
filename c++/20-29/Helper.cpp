@@ -11,6 +11,17 @@ string Helper::convertInt(int number) {
     return ss.str();
 }
 
+int Helper::numDigits(int num) {
+    int digits = 0;
+    if(num < 0)
+        num = -num;
+    while(num > 0) {
+        digits++;
+        num /= 10;
+    }
+    return digits;
+}
+
 int Helper::factorial(int num) {
     if (num > 1)
         return (num * factorial(num - 1));
@@ -56,11 +67,14 @@ bool Helper::isPrime(int num) {
     return true;
 }
 
-bool Helper::isPalindrome(int num) {
-    string str = convertInt(num);
+bool Helper::isPalindrome(string str) {
     stack<char> numStack;
     unsigned int j;
-    if(str.length() % 2 == 0) {
+	if(str.length() < 1)
+		return false;
+	else if(str.length() == 1)
+		return true;
+    else if(str.length() % 2 == 0) {
         for(unsigned int i = 0; i <= ((str.length() - 1) / 2); i++) 
             numStack.push(str.at(i));
         j = str.length() / 2;
