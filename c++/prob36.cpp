@@ -10,25 +10,25 @@ Answer: ? */
 using namespace std;
 
 string toBinary(int num) {
-	string bi = "";
-	for(; num > 0; num /= 2) {
-		if(num % 2 == 0)
-			bi.insert(bi.begin(), '0');
-		else
-			bi.insert(bi.begin(), '1');
-	}
-	return bi;
+    string bi = "";
+    for(; num > 0; num /= 2) {
+        if(num % 2 == 0)
+            bi.insert(bi.begin(), '0');
+        else
+            bi.insert(bi.begin(), '1');
+    }
+    return bi;
 }
 
 int main() {
-	int total = 0;
+    int total = 0;
     for(int i = 1; i < 1000000; i++) {
-		string str = Helper::convertInt(i);
-		if(Helper::isPalindrome(str)) {
-			if(Helper::isPalindrome(toBinary(i)))
-				total += i;
-		}
-	}
-	cout << total << endl;
+        string str = Helper::convertInt(i);
+        if(Helper::isPalindrome(str)) {
+            if(Helper::isPalindrome(toBinary(i)))
+                total += i;
+        }
+    }
+    cout << total << endl;
     return 0;
 }
