@@ -23,8 +23,8 @@ int Helper::numDigits(int num) {
 }
 
 int Helper::concat(int ary[], int size) {
-    int answer = ary[0];
-    for(int i = 1; i < size; i++)
+    int answer = ary[size-1];
+    for(int i = size-2; i >= 0; i--)
         answer += (ary[i] * pow(10, numDigits(answer)));
     return answer;
 }
