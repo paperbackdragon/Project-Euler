@@ -11,6 +11,6 @@ Answer: ? */
 using namespace std;
 
 int main() {
-    //
+    cout << Helper::numDigits(30) << endl;
     return 0;
 }
