@@ -9,7 +9,7 @@ What is the largest 1 to 9 pandigital 9-digit number that can be formed as the c
 Answer: 932718654 */
 
 #include <iostream>
-#include "../Helper.h"
+#include "Helper.h"
 using namespace std;
 
 /* size is current size of ary */

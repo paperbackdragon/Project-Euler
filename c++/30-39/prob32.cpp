@@ -8,7 +8,7 @@ Answer: 45228 */
 #include <iostream>
 #include <cmath>
 #include <set>
-#include "../Helper.h"
+#include "Helper.h"
 using namespace std;
 
 int main() {
