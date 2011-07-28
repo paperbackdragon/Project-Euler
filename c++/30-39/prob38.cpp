@@ -9,7 +9,7 @@ What is the largest 1 to 9 pandigital 9-digit number that can be formed as the c
 Answer: 932718654 */
 
 #include <iostream>
-#include "Helper.h"
+#include "../Helper.h"
 using namespace std;
 
 /* size is current size of ary */
@@ -18,7 +18,7 @@ int* copyAddOne(int* ary, int size) {
     ary = new int[size + 1];
     for(int i = 0; i < size; i++)
         *(ary + i) = *(temp + i);
-    delete[] temp; //Memory leak? delete[] doesn't work...
+    delete[] temp;  //Memory leak? delete[] doesn't work...
     return ary;
 }
 
@@ -34,11 +34,7 @@ int main() {
             nums = copyAddOne(nums, count);
             *(nums + count) = i * (count + 1);
             pan = Helper::concat(nums, count + 1);
-            if(Helper::numDigits(pan) == 9 && Helper::isPandigital(pan)) {
-                cout << pan << " = " << i << ", " << count+1 << endl;
-                    for(int j = 0; j < count+1; j++)
-                        cout << *(nums + j) << ", ";
-                    cout << endl << endl;
+            if(Helper::numDigits(pan) == 9 && Helper::isPandigital(pan, 9)) {
                 if(pan > largest)
                     largest = pan;
             }

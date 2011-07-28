@@ -82,17 +82,17 @@ bool Helper::isPrime(int num) {
     return true;
 }
 
-bool Helper::isPandigital(int num) {
-    int ary[] = {1, 2, 3, 4, 5, 6, 7, 8, 9};
-    int i = 0;
+bool Helper::isPandigital(int num, int digit) {
     int sum = 0;
-    //find digits of all 3 numbers
-    for(i = 0; num > 0; i++) {
+    int ary[] = {1, 2, 3, 4, 5, 6, 7, 8, 9};
+    //zero the digits we're not checking
+    for(int i = digit; i < 9; i++)
+        ary[i] = 0;
+    //find digits in num
+    for(int i = 0; num > 0; i++, num /= 10)
         ary[(num % 10)- 1] = 0;
-        num /= 10;
-    }
     //check if all array slots are 0
-    for(i = 0; i < 9; i++)
+    for(int i = 0; i < 9; i++)
         sum += ary[i];
     if(sum == 0)
         return true;

@@ -8,7 +8,7 @@ Answer: 45228 */
 #include <iostream>
 #include <cmath>
 #include <set>
-#include "Helper.h"
+#include "../Helper.h"
 using namespace std;
 
 int main() {
@@ -31,8 +31,8 @@ int main() {
             //concatenate
             int nums[] = {a, b, c};
             num = Helper::concat(nums, 3);
-            if(Helper::isPandigital(num))  //if identity is 1-9 pandigital
-                products.insert(c); //add answer to set
+            if(Helper::isPandigital(num, 9))//if identity is 1-9 pandigital
+                products.insert(c);         //add answer to set
         }
     }
     //sum contents of set and print to cout

@@ -32,8 +32,9 @@ public:
     static bool isPrime(int);
     
     /* Returns true if given integer is pandigital
+    NOTE: Second argument is largest digit of pandigital
     NOTE: Does not check for digits used more than once */
-    static bool isPandigital(int);
+    static bool isPandigital(int, int);
 	
 	/* Returns true if given string is a palindrome */
 	static bool isPalindrome(std::string);
