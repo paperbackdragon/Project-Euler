@@ -5,6 +5,7 @@ Answer: 5537376230 */
 #include <iostream>
 #include <string>
 #include <sstream>
+#include "Helper.h"
 using namespace std;
 
 string a[100] = {
@@ -110,18 +111,10 @@ string a[100] = {
     "53503534226472524250874054075591789781264330331690"
 };
 
-long long convertToInt(string str) {
-    stringstream ss;
-    long long newint;
-    ss << str;
-    ss >> newint;
-    return newint;
-}
-
 int main() {
     long long sum = 0;
     for(int i = 0; i < 100; i++)
-        sum += convertToInt(a[i].substr(0, 15));
-    cout << sum << endl;
+        sum += Helper::convertStr(a[i].substr(0, 15));
+    cout << sum << endl; //Prints first 17 digits
     return 0; 
 }

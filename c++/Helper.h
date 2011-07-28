@@ -8,6 +8,9 @@ public:
     /* Converts given integer to a string */
     static std::string convertInt(int);
 	
+    /* Converts given string to an integer */
+    static long long convertStr(std::string);
+    
 	/* Returns the number of digits in given integer */
 	static int numDigits(int);
     

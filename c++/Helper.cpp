@@ -11,6 +11,14 @@ string Helper::convertInt(int number) {
     return ss.str();
 }
 
+long long Helper::convertStr(string str) {
+    stringstream ss;
+    long long newint;
+    ss << str;
+    ss >> newint;
+    return newint;
+}
+
 int Helper::numDigits(int num) {
     int digits = 0;
     if(num < 0)
