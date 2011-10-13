@@ -1,3 +1,7 @@
+lpFact :: Integer -> Integer
+lpFact x
+    | not null [y | y <- reverse [2..(round (sqrt (fromIntegral x)))], x `mod` y == 0]
+
 isPrime :: Integer -> Bool
 isPrime x
     | x == 2                  = True
