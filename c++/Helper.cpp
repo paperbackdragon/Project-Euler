@@ -33,7 +33,7 @@ int Helper::numDigits(int num) {
 int Helper::concat(int ary[], int size) {
     int answer = ary[size-1];
     for(int i = size-2; i >= 0; i--)
-        answer += (ary[i] * pow(10, numDigits(answer)));
+        answer += (ary[i] * pow((double)10, numDigits(answer)));
     return answer;
 }
 
