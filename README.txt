@@ -1,7 +1,7 @@
 Author: Heather (a.k.a. paperbd)
 
 Updates:
-- Work on the Haskell solutions is now continuing.
+- Work on the Python solutions is now continuing.
 
 Notes on the C++ solutions:
 - Solutions are split into groups of ten and put in folders.
